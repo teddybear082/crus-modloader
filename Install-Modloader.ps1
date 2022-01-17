@@ -49,8 +49,8 @@ $workDir = Get-Item $PSScriptRoot
 Push-Location $workDir
 try
 {
-    # Create copy of pck for modification
-    Copy-Item $pckFile $workDir
+    # Create copy of pck for modification, force to replace a previous work copy
+    Copy-Item -Force $pckFile $workDir
     $workPck = Get-Item "$workDir\$($pckFile.Name)"
 
     # Run packer, now that everything is in current directory use .Name to get required pck structure\
