@@ -1,5 +1,9 @@
 extends Node
 
+# Used to instruct modbase to begin map verification/builds
+signal modloading_complete()
+signal modloading_failed()
+
 var MODLOADER_VERSION = "0.2.1"
 var MODS = []
 var MOD_INFO = {}
@@ -132,7 +136,7 @@ enum MOD_INITIALIZATION_MODE {
 	MULTI_ROOT,
 }
 
-var MOD_INIT_MODE: bool
+var MOD_INIT_MODE: int
 
 # Prepares metadata of mods in user://mods before loading actual data
 func init_mods() -> Array:
