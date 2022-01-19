@@ -341,6 +341,10 @@ func sort_mod(mod: Dictionary, mods_new: Array, mods_tmp: Array):
 	mods_tmp.remove(mods_tmp.find(mod))
 	mods_new.push_front(mod)
 
+func dump_fgd(fgd_path) -> void:
+	mod_log('Dumping .fgd file to user://', 'modloader::dump_fgd')
+	dump_file(fgd_path, "user://")
+
 func _init():
 
 	var config = ConfigFile.new()
@@ -355,9 +359,9 @@ func _init():
 
 	# dumping any given files before loading data packs messes res:// up (in-editor)
 	if err == OK:
-		dump_files    = config.get_value("util", "dump_files", dump_files)
-		dump_fgd      = config.get_value("util", "dump_fgd", dump_fgd)
-		dump_path     = config.get_value("util", "dump_path", dump_path)
+		dump_files    = config.get_value("util",   "dump_files", dump_files)
+		dump_fgd      = config.get_value("util",   "dump_fgd", dump_fgd)
+		dump_path     = config.get_value("util",   "dump_path", dump_path)
 		old_init_mode = config.get_value("loader", "old_init_mode", old_init_mode)
 		old_mod_log   = config.get_value("loader", "old_mod_log", old_mod_log)
 
@@ -366,9 +370,10 @@ func _init():
 			mod_log('Dumping file %s to %s' % [ path_wrap(f), path_wrap(dump_path) ], 'modloader::dump')
 			dump_file(f, dump_path)
 
+	# Add an additional dump to end of (successful) modloading process
 	if dump_fgd:
-		mod_log('Dumping .fgd file to %s' % [ path_wrap(dump_path) ], 'modloader::dump')
-		dump_file(fgd_path, "user://")
+		dump_fgd(fgd_path)
+		connect("modloading_complete", self, "dump_fgd", [ fgd_path ])
 
 	MOD_INIT_MODE = MOD_INITIALIZATION_MODE.ORIGINAL if old_init_mode else MOD_INITIALIZATION_MODE.MULTI_ROOT
 	OLD_MOD_LOG = old_mod_log
@@ -407,13 +412,17 @@ func _init():
 			var bad_files = load_mod_data(n)
 			if mod["name"] in init_scripts.keys():
 				var init_path = init_scripts[mod["name"]]
-				if init_path and ResourceLoader.exists(init_path):
-					var scr = ResourceLoader.load(init_path)
-					mod_log("   - Init script at " + path_wrap(init_path), "Mod Loader")
-					if scr:
-						init_scripts[mod["name"]] = scr
+				if init_path:
+					mod_log("   - Init script at %s" % [ path_wrap(init_path) ], "Mod Loader")
+					if ResourceLoader.exists(init_path):
+						var scr = ResourceLoader.load(init_path)
+						if scr:
+							init_scripts[mod["name"]] = scr
+						else:
+							mod = {"error": "Init script failed to load"}
 					else:
-						mod = {"error": "Init script failed to load"}
+						mod = {"error": "Init script not found at declared path."}
+						mod_log("   - ? Init script not found at declared path.", "Mod Loader")
 			else:
 				n.initialized = true
 			if bad_files.empty() and !mod.has("error"):
@@ -424,12 +433,14 @@ func _init():
 				mod_log('CRITICAL ERROR: "' + mod.name + '" failed to load the following files:', "Mod Loader")
 				for bf in bad_files:
 					mod_log('	- ' + path_wrap(bf), "Mod Loader")
+				emit_signal("modloading_failed")
 				quit_game = true
 				return
 			elif mod.has("error"):
 				OS.alert('Failed to start game because mod "' + mod.name + '" couldn\'t fully load. Check %appdata%\\Godot\\app_userdata\\Cruelty Squad\\logs\\mods.log for more information.', 'CruS Mod Loader')
 				mod_log('CRITICAL ERROR: couldn\'t load the init script for "' + mod.name + '".', "Mod Loader")
 				quit_game = true
+				emit_signal("modloading_failed")
 				return
 
 func _enter_tree():
@@ -453,11 +464,11 @@ func _ready():
 			mod_node.add_child(inst)
 			mod_log(' -> Initializing "' + mod + str('" (', inits + 1, "/", init_scripts.keys().size(), ")"), "Mod Loader")
 			mod_log('  - Init Script: %s' % [ path_wrap(scr.resource_path) ], "Mod Loader")
-			mod_log('   -> inst.set_script(%s)' % [ scr.resource_path.get_file() ], "Mod Loader")
 			inst.set_script(scr)
-			mod_log('      inst.set_script(%s) ->' % [ scr.resource_path.get_file() ], "Mod Loader")
 			inits += 1
 		mod_log("MOD LOADING COMPLETE: Successfully loaded " + str(loads) + " mod(s)", "Mod Loader")
+		mod_log("<Firing modloading_complete>", "Mod Loader")
+		emit_signal("modloading_complete")
 
 # Utility functions
 
