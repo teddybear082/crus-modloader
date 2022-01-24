@@ -3,8 +3,9 @@ extends Node
 # Used to instruct modbase to begin map verification/builds
 signal modloading_complete()
 signal modloading_failed()
+signal modloading_end()
 
-var MODLOADER_VERSION = "0.2.1"
+var MODLOADER_VERSION = "0.2.2"
 var MODS = []
 var MOD_INFO = {}
 
