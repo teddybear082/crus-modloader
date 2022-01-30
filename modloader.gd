@@ -342,12 +342,18 @@ func sort_mod(mod: Dictionary, mods_new: Array, mods_tmp: Array):
 	mods_tmp.remove(mods_tmp.find(mod))
 	mods_new.push_front(mod)
 
-func dump_fgd(fgd_path) -> void:
-	mod_log('Dumping .fgd file to user://', 'modloader::dump_fgd')
-	dump_file(fgd_path, "user://")
+func dump_fgd_scene(fgd_scene_path: String) -> void:
+	mod_log('Dumping %s file to user://' % [ fgd_scene_path.get_file() ], 'modloader:dump_fgd')
+	dump_file(fgd_scene_path, "user://")
+
+func dump_fgd(fgd_scene_path: String) -> void:
+	# Load fgd resource, and dump it through script method
+	var fgd_def: QodotFGDFile = load(fgd_scene_path)
+	var fgd_path = ('user://').plus_file(fgd_scene_path.get_basename() + '.fgd')
+	mod_log('Dumping %s file to user://' % [ fgd_path.get_file() ], 'modloader:dump_fgd')
+	dump_string_to_file(fgd_def.build_class_text(), 'qodot.fgd', 'user://')
 
 func _init():
-
 	var config = ConfigFile.new()
 	var dir = Directory.new()
 	var err = config.load("user://modloader.cfg")
@@ -373,7 +379,9 @@ func _init():
 
 	# Add an additional dump to end of (successful) modloading process
 	if dump_fgd:
+		dump_fgd_scene(fgd_path)
 		dump_fgd(fgd_path)
+		connect("modloading_complete", self, "dump_fgd_scene", [ fgd_path ])
 		connect("modloading_complete", self, "dump_fgd", [ fgd_path ])
 
 	MOD_INIT_MODE = MOD_INITIALIZATION_MODE.ORIGINAL if old_init_mode else MOD_INITIALIZATION_MODE.MULTI_ROOT
@@ -610,6 +618,22 @@ func dump_file(filepath: String, outpath="user://dump", preserve_folder_structur
 				obj.get_data().save_png(outpath + "/" + dirpath.trim_prefix("res://") + filepath.get_file())
 			_:
 				ResourceSaver.save(outpath + "/" + dirpath.trim_prefix("res://") + filepath.get_file(), obj)
+
+# Added for dumping fgd file from resource
+func dump_string_to_file(content: String, filepath: String, outpath="user://dump", preserve_folder_structure = false):
+	var dirpath = ""
+	if preserve_folder_structure:
+		var dir := Directory.new()
+		dirpath = filepath.replace("res://", "user://")
+		dirpath = filepath.substr(0, filepath.length() - filepath.get_file().length())
+		if !dir.dir_exists(dirpath):
+			dir.make_dir_recursive(dirpath)
+
+	var full_path = outpath.plus_file(filepath)
+	var file = File.new()
+	file.open(full_path, File.WRITE)
+	file.store_string(content)
+	file.close()
 
 func dump_folder(dirpath: String, outpath="user://"):
 	var dir = Directory.new()
