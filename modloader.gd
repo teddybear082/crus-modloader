@@ -148,6 +148,9 @@ func init_mods() -> Array:
 	var MULTI_ROOT = MOD_INIT_MODE == MOD_INITIALIZATION_MODE.MULTI_ROOT
 
 	if MULTI_ROOT == true:
+		if !dir.dir_exists('user://mods'):
+			dir.make_dir('user://mods')
+
 		# Initialize outside of iter
 		if !dir.dir_exists('user://logs'):
 			dir.make_dir('user://logs')
