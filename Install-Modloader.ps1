@@ -1,13 +1,16 @@
 #Requires -Version 3
 
-# Installs modloader.gdc
+# Installs modloader.gdc and vr addons
 # Expected folder structure:
 # => <GAME_DIR>
-#   => crus-modloader
+#   => crus-vr-modloader
 #     - Install-Modloader.ps1
 #     - install_modloader.bat
 #     - godotpcktool.exe
 #     - modloader.gdc
+#     - addons
+#     - libgodot_openxr.dll
+#     - openxr_loader.dll
 #   - crueltysquad.pck
 #   - crueltysquad.exe
 #   - [...]
@@ -41,6 +44,10 @@ $gameDir         = Get-Item "$PSScriptRoot\.."
 
 $pcktool         = Get-Item "$PSScriptRoot\godotpcktool.exe"
 $modloaderScript = Get-Item "$PSScriptRoot\modloader.gdc"
+$vrAddons        = Get-Item "$PSScriptRoot\addons"
+$openxrDLL1      = Get-Item "$PSScriptRoot\libgodot_openxr.dll"
+$openxrDLL2      = Get-Item "$PSScriptRoot\openxr_loader.dll"
+$vroverrideCfg   = Get-Item "$PSScriptRoot\override.cfg"
 $pckFile         = Get-Item "$gameDir\crueltysquad.pck"
 $pckBackupPath   = "$($pckFile.Directory)\$($pckFile.Name).bak"
 
@@ -59,6 +66,19 @@ try
     & $pckTool $workPck.Name -a a $modloaderScript.Name `
         | ForEach-Object { Write-Host -F Cyan "[godotpcktool] $_" }
 
+    # Run VR packer
+    Write-Step "Adding OpenXR addon to game pck file"
+    & $pckTool $workPck.Name -a a $vrAddons.Name `
+        | ForEach-Object { Write-Host -F Cyan "[godotpcktool] $_" }
+
+    # Create copy of VR override.cfg file in game directory
+    Copy-Item -Force $vroverrideCfg $gameDir
+	
+	# Create copy of libgodot_openxr.dll in game directory
+	# Not sure if this is really necessary for VR to work but doing it just in case doesn't hurt for now
+	Copy-Item -Force $openxrDLL1 $gameDir
+	Copy-Item -Force $openxrDLL2 $gameDir
+	
     # Move original pck to backup filename
     Write-Step "Backing up original pck to ${pckBackupPath}"
     Move-Item -Force $pckFile "$pckBackupPath"
