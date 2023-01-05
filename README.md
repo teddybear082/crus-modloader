@@ -12,7 +12,7 @@
 
 ## Install the loader
 
-1. ~~Download the release in this fork. This early build currently uses a modification of crustyrashky and disco0's newer install script method. Unzip the release and copy the folder this README is in to your game folder, it should look something like this:
+1. ~~Download the v0.0.1-VR-alpha release in this fork. This early build currently uses a modification of crustyrashky and disco0's newer install script method. Unzip the release and copy the folder this README is in to your game folder, it should look something like this:
 ```
 => <GAME_DIR>
   => <THIS FOLDER> (Unzipped)
