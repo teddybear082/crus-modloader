@@ -32,9 +32,10 @@
 ```
 2. Run `install_modloader.bat`
 3. Check to see if your game directory now has an override.cfg, libgodot_openxr.dll and openxr_loader.dll next to the crueltysquad.exe and crueltysquad.pck (If so, that is a good sign, as this installer copies those files there).
-4. Start the game (it may crash the first time due to lack of the godot-xr-tools asset); if you now have a `mods` folder under `%appdata%\Godot\app_userdata\Cruelty Squad\` it worked
+4. Start the game (it may crash the first time due to lack of the godot-xr-tools asset); if you now have a `mods` folder under `%appdata%\Godot\app_userdata\Cruelty Squad\` it worked  (as an example, I find this folder in my personal install by navigating to Windows(C:)\Users\[my windows user profile name]\AppData\Roaming\Godot\app_userdata\Cruelty Squad\mods).
+
 5. Now go to that `mods` folder and copy the "vr-mod-test-4" folder from this folder to the 'mods' folder.
-6. Run the game again with your VR headset on and active / running and the main scene should populate into your VR headset if all has gone well.
+6. Run the crueltysquad.exe again with your VR headset on and active / running and the main scene should populate into your VR headset if all has gone well.
 
 ## Return to flat screen mode (in testing, not sure if it will work)
 1. Go to the vr-mod-test-4 folder in your `mods` folder, extract the contents of mod.zip, delete the "Cutscenes" folder, and rezip the remaining contents back into "mod.zip"
