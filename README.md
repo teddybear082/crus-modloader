@@ -24,6 +24,7 @@
     - libgodot_openxr.dll
     - openxr_loader.dll
     - override.cfg
+	- cs-scripts-vr-mod
     - cs-vr-mod-vr-files
 	- cs-vr-mod-xr-tools
     - README.md
@@ -35,10 +36,11 @@
 3. Check to see if your game directory now has an override.cfg, libgodot_openxr.dll and openxr_loader.dll next to the crueltysquad.exe and crueltysquad.pck (If so, that is a good sign, as this installer copies those files there).
 4. Start the game (it may crash the first time due to lack of the godot-xr-tools asset); if you now have a `mods` folder under `%appdata%\Godot\app_userdata\Cruelty Squad\` it worked  (as an example, I find this folder in my personal install by navigating to Windows(C:)\Users\[my windows user profile name]\AppData\Roaming\Godot\app_userdata\Cruelty Squad\mods).
 
-5. Now go to that `mods` folder and copy the "cs-vr-mod-vr-files" folder and "cs-vr-mod-xr-tools" folder from this folder to the 'mods' folder.
+5. Now go to that `mods` folder and copy the "cs-vr-mod-vr-files" folder, "cs-vr-mod-xr-tools" folder, and "cs-scripts-vr-mod" folder from this folder to the 'mods' folder.
 6. Run the crueltysquad.exe again with your VR headset on and active / running and the main scene should populate into your VR headset if all has gone well.
+	If it crashes the first time to desktop, run it again, sometimes it takes three times running the .exe for everything to take effect.  More than that, and there's a problem.
 
-## Return to flat screen mode (in testing, not sure if it will work)
+## Return to flat screen mode
 1. Remove the vr-related mod folds from your mod directory
 
 ## Uninstall the loader
