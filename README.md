@@ -52,6 +52,10 @@ This early build currently uses a modification of crustyrashky and disco0's newe
 
 
 
+---------------------------------------------------------------------------
+
+![cs-vr-mod-install-directory2](https://user-images.githubusercontent.com/87204721/215295184-94778c91-a6e2-4376-b979-a5a4bf64b859.png)
+
 
 2. Run `install_modloader.bat`
 3. Check to see if your game directory now has an override.cfg, libgodot_openxr.dll and openxr_loader.dll next to the crueltysquad.exe and crueltysquad.pck (If so, that is a good sign, as this installer copies those files there).
