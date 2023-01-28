@@ -1,18 +1,30 @@
 # CRUELTY SQUAD VR MOD LOADER
 
-**To load custom maps install the [CruS Mod Base](https://github.com/crustyrashky/crus-modbase) mod**
+**To load custom maps install the [CruS Mod Base](https://github.com/crustyrashky/crus-modbase) mod, NOT THIS ONE**
 
 **This is a fork of the excellent modloader developed by crustyrashky and disco0, which installs both disco's 0.2.2b version of the crus modloader as well as files required for a VR mod using the Godot OpenXR Asset and XR Tools asset.**
 
-**YOU SHOULD NOT USE THIS INSTALLER UNLESS YOU PLAN TO ALSO INSTALL A VR MOD FILE THAT HAS THE GODOT XR TOOLS ASSET BEFORE RUNNING THE GAME_DIR **
+**YOU SHOULD NOT USE THIS INSTALLER UNLESS YOU PLAN TO ALSO INSTALL A VR MOD FILE THAT HAS THE GODOT XR TOOLS ASSET BEFORE RUNNING THE GAME EXE **
 
 **YOU SHOULD NOT USE THIS INSTALLER IF YOU DON'T HAVE A VR HEADSET**
 
+Only use this game on an official purchased version of the game.
+
 **This is also in an ALPHA (TESTING) STATE!!! Back up EVERYTHING Cruelty Squad associated before trying this version of the modloader.  Right now it is intended ONLY for VR modders not end-users.**
+
+
+##PRELIMINARY STEPS:
+
+If you are running Cruelty Squad for the first time, run the game once first just to make sure all directories are created and then exit out.
+
+If you have installed Cruelty Squad before and you have used any mods / modloaders before, you must return to a "clean" state of the game, otherwise this is very likely not to work.
+
+Make sure the game is installed in the same directory as your Windows Powershell. For me, installing in my normal default Steam directory in Program Files worked fine.
+
 
 ## Install the loader
 
-1. ~~Download the v0.0.2-VR-alpha release in this fork. This early build currently uses a modification of crustyrashky and disco0's newer install script method. Unzip the release and copy the folder this README is in to your game folder, it should look something like this:
+1. ~~Download the v0.11-VR-alpha release in THIS fork (teddybear082/new-install-script). This early build currently uses a modification of crustyrashky and disco0's newer install script method. Unzip the release and copy the folder this README is in to your game folder, it should look something like this:
 ```
 => <GAME_DIR>
   => <THIS FOLDER> (Unzipped)
@@ -38,7 +50,7 @@
 
 5. Now go to that `mods` folder and copy the "cs-vr-mod-vr-files" folder, "cs-vr-mod-xr-tools" folder, and "cs-scripts-vr-mod" folder from this folder to the 'mods' folder.
 6. Run the crueltysquad.exe again with your VR headset on and active / running and the main scene should populate into your VR headset if all has gone well.
-	If it crashes the first time to desktop, run it again, sometimes it takes three times running the .exe for everything to take effect.  More than that, and there's a problem.
+	If it crashes the first time to desktop, run it again, sometimes it takes THREE times running the .exe for everything to take effect.  More than that, and there's a problem.
 
 ## Return to flat screen mode
 1. Remove the vr-related mod folds from your mod directory
@@ -49,7 +61,7 @@
 2. Go to Properties > Local Files
 3. Verify integrity of game files
 
-## Install other mods
+## Install other mods (probably this will not work right now, as the Crus mod base touches the same files as I do. Someday I am hoping to integrate it.
 
 1. Drag/extract mod folder into `%appdata%\Godot\app_userdata\Cruelty Squad\mods`
 2. Launch the game
@@ -69,8 +81,8 @@ Builds off of https://github.com/disco0/crus-modloader and https://github.com/cr
 
 Uses Godot OpenXR Asset and Godot XR Tools assets, found here:
 
-https://github.com/GodotVR/godot_openxr
+https://github.com/GodotVR/godot_openxr (uses Godot OpenXR 1.3.0 release, July 15, 2022)
 
-https://github.com/GodotVR/godot-xr-tools
+https://github.com/GodotVR/godot-xr-tools (uses December 29, 2022 build)
 
 
