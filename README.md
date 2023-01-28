@@ -46,6 +46,13 @@ This early build currently uses a modification of crustyrashky and disco0's newe
   - crueltysquad.exe
   - [...]
 ```
+
+
+![cs-vr-mod-install-directory1](https://user-images.githubusercontent.com/87204721/215295165-ea75968d-4ed2-42f7-be58-ad4119a17db9.png)
+
+
+
+
 2. Run `install_modloader.bat`
 3. Check to see if your game directory now has an override.cfg, libgodot_openxr.dll and openxr_loader.dll next to the crueltysquad.exe and crueltysquad.pck (If so, that is a good sign, as this installer copies those files there).
 4. Start the game (it may crash the first time due to lack of the godot-xr-tools asset); if you now have a `mods` folder under `%appdata%\Godot\app_userdata\Cruelty Squad\` it worked  (as an example, I find this folder in my personal install by navigating to Windows(C:)\Users\[my windows user profile name]\AppData\Roaming\Godot\app_userdata\Cruelty Squad\mods).
