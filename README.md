@@ -13,7 +13,7 @@ Only use this game on an official purchased version of the game.
 **This is also in an ALPHA (TESTING) STATE!!! Back up EVERYTHING Cruelty Squad associated before trying this version of the modloader.  Right now it is intended ONLY for VR modders not end-users.**
 
 
-##PRELIMINARY STEPS:
+## PRELIMINARY STEPS:
 
 If you are running Cruelty Squad for the first time, run the game once first just to make sure all directories are created and then exit out.
 
@@ -24,7 +24,9 @@ Make sure the game is installed in the same directory as your Windows Powershell
 
 ## Install the loader
 
-1. ~~Download the v0.11-VR-alpha release in THIS fork (teddybear082/new-install-script). This early build currently uses a modification of crustyrashky and disco0's newer install script method. Unzip the release and copy the folder this README is in to your game folder, it should look something like this:
+1. ~~Download the v0.11-VR-alpha release in THIS fork (teddybear082/new-install-script). Link here: https://github.com/teddybear082/crus-modloader/releases/download/v0.11-VR-alpha/crus-vr-modloader.zip. 
+
+This early build currently uses a modification of crustyrashky and disco0's newer install script method. Unzip the release and copy the folder this README is in to your game folder, it should look something like this:
 ```
 => <GAME_DIR>
   => <THIS FOLDER> (Unzipped)
