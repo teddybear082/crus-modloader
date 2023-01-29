@@ -116,7 +116,7 @@ Joystick: move
 
 Joystick press: go back screens in main menu, like when selecting implants and equipment 
 
-
+-----------------
 
 Right (weapon hand)
 
@@ -133,7 +133,7 @@ Joystick: turn (Joystick up to jump, joystick down for crouch)
 Joystick press: hold for Radial menu to select weapon, go back screens on main menu 
 
 
-
+---------------
 
 
 Gesture controls:
@@ -144,7 +144,7 @@ Point weapon down: Reload (while holding grip)
 
 In main menu just select things by using the index finger of your hands
 
-
+-----------
 Vehicle controls:
 
 Grab steering wheel and turn to turn 
