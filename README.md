@@ -98,4 +98,56 @@ https://github.com/GodotVR/godot_openxr (uses Godot OpenXR 1.3.0 release, July 1
 
 https://github.com/GodotVR/godot-xr-tools (uses December 29, 2022 build)
 
+---------------------------------------------------
 
+## Controls
+
+Left (off hand)
+
+Trigger: Kick/jetpack Activate (toggle)/BioThruster - and select items on menu with pointer
+
+X: Not used
+
+Y: Toggle floating menu (pause menu) and stocks menu on right hand (touch stocks menu with left index finger to select options; use pointer to select options on floating menu or get close enough to hit it with your hand)
+
+Grip: Climb
+
+Joystick: move 
+
+Joystick press: go back screens in main menu, like when selecting implants and equipment 
+
+
+
+Right (weapon hand)
+
+Trigger: Shoot / Skull gun - select items on menu with pointer 
+
+A: throw weapon (For Vive OG wand users, throw weapon instead by pressing both triggers and both grips at the same time)
+
+B: Grappendix
+
+Grip: Use  / climb / Activate reload 
+
+Joystick: turn (Joystick up to jump, joystick down for crouch)
+
+Joystick press: hold for Radial menu to select weapon, go back screens on main menu 
+
+
+
+
+
+Gesture controls:
+
+Hand Radial menu: Select weapon by hovering and then releasing joystick press (on radial menu, bottom option is tertiary and will throw grenades or consume health items if you have those as your tertiary)
+
+Point weapon down: Reload (while holding grip)
+
+In main menu just select things by using the index finger of your hands
+
+
+Vehicle controls:
+
+Grab steering wheel and turn to turn 
+Gas: right trigger
+Brake: left trigger 
+Reverse/Forward: Right pad press (toggle)
