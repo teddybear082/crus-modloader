@@ -148,6 +148,9 @@ In main menu just select things by using the index finger of your hands
 Vehicle controls:
 
 Grab steering wheel and turn to turn 
+
 Gas: right trigger
+
 Brake: left trigger 
+
 Reverse/Forward: Right pad press (toggle)
