@@ -154,3 +154,13 @@ Gas: right trigger
 Brake: left trigger 
 
 Reverse/Forward: Right pad press (toggle)
+
+---------------------------------------------------
+
+## 100 Percent Save File
+
+If you just want to play around with CS in VR and have never played the game before or haven't gotten far, I found a 100% save file on NexusMods. Not my content and I can't vouch for it.
+
+But you can find it here: https://www.nexusmods.com/crueltysquad/mods/2 as well as instructions for backing up your save file and installing the new save in case you want to revert back.
+
+I have been using it for testing the mod functions but I can't say for sure whether using it breaks your experience at all.
