@@ -24,7 +24,7 @@ Make sure the game is installed in the same directory as your Windows Powershell
 
 ## Install the loader
 
-1. ~~Download the v0.11-VR-alpha release in THIS fork (teddybear082/new-install-script). Link here: https://github.com/teddybear082/crus-modloader/releases/download/v0.11-VR-alpha/crus-vr-modloader.zip. 
+1. ~~Download the v0.14-VR-alpha release in THIS fork (teddybear082/new-install-script). Link here: https://github.com/teddybear082/crus-modloader/releases/tag/v0.14-VR-alpha 
 
 This early build currently uses a modification of crustyrashky and disco0's newer install script method. Unzip the release and copy the folder this README is in to your game folder, it should look something like this:
 ```
@@ -138,7 +138,11 @@ Joystick press: hold for Radial menu to select weapon, go back screens on main m
 
 Gesture controls:
 
-Hand Radial menu: Select weapon by hovering and then releasing joystick press (on radial menu, bottom option is tertiary and will throw grenades or consume health items if you have those as your tertiary)
+Hand Radial menu: Select weapon by hovering and then releasing joystick press 
+
+	On radial menu, bottom option is tertiary and will activate grenades or consume health items if you have those as your tertiary.
+	
+	On radial menu, up option is suicide. Choose it twice to activate.
 
 Point weapon down: Reload (while holding grip)
 
@@ -164,3 +168,27 @@ If you just want to play around with CS in VR and have never played the game bef
 But you can find it here: https://www.nexusmods.com/crueltysquad/mods/2 as well as instructions for backing up your save file and installing the new save in case you want to revert back.
 
 I have been using it for testing the mod functions but I can't say for sure whether using it breaks your experience at all.
+
+## Known issues
+
+-You have to jump up stairs
+
+-You need to set the resolution in the in game menu to 1920 x 1080 or 1024 x 720 to ensure you can see the full menus
+
+-Performance in some levels is very bad, particularly the large ones. Post beta release I will look into seeing if there is anything more I can do.
+	
+	For now you may want to try:
+	
+	(1)	Turning down your resolution some in your headset settings / virtual desktop settings (medium instead of high or ultra)
+	
+	(2)	Turning on ASW always on, Virtual Desktop SSW always on, SteamVR Reprojection always on
+	
+-Because of the same performance issues I have modified the game to deactivate NPCs that are a certain distance from you. This means the game does not quite play the same as the original and you can catch NPC's "sleeping on the job." But it also provides a 15-20 FPS boost in my testing.
+
+-You cannot wall jump in death mode
+
+-You need to "distance grab" items and open doors with a virtual pointer like in the base game. I may work on this further post beta release.
+
+-Some random crashing. I don't think this is specifically related to VR.
+
+-If you find other issues or think settings on certain implants should be tweaked, please let me know!
