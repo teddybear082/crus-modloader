@@ -24,7 +24,7 @@ Make sure the game is installed in the same directory as your Windows Powershell
 
 ## Install the loader
 
-1. ~~Download the v0.14-VR-alpha release in THIS fork (teddybear082/new-install-script). Link here: https://github.com/teddybear082/crus-modloader/releases/tag/v0.14-VR-alpha 
+1. ~~Download the v0.15-VR-alpha release in THIS fork (teddybear082/new-install-script). Link here: https://github.com/teddybear082/crus-modloader/releases/tag/v.015-VR-alpha
 
 This early build currently uses a modification of crustyrashky and disco0's newer install script method. Unzip the release and copy the folder this README is in to your game folder, it should look something like this:
 ```
@@ -98,19 +98,31 @@ https://github.com/GodotVR/godot_openxr (uses Godot OpenXR 1.3.0 release, July 1
 
 https://github.com/GodotVR/godot-xr-tools (uses December 29, 2022 build)
 
+Special thanks to:
+
+Brock and MrGlock from the Crus Discord for extensive testing 
+
+DX from the Crus Discord for so much help and ideas even though DX does not have a VR headset
+
+Trashski and Disc0 from the Crus discord for their modloader which literally made this mod happen and tons of advice
+
+Digital Nightmare and MalcolmnNixon from Godot XR discord for so much help and pointers with VR stuff and creating the XRTools that again literally made this mod happen.
+
+
+
 ---------------------------------------------------
 
 ## Controls
 
 Left (off hand)
 
-Trigger: Kick/jetpack Activate (toggle)/BioThruster - and select items on menu with pointer
+Trigger: Kick/jetpack Activate (toggle)/BioThruster/Throw held items- and select items on menu with pointer
 
 X: Not used
 
 Y: Toggle floating menu (pause menu) and stocks menu on right hand (touch stocks menu with left index finger to select options; use pointer to select options on floating menu or get close enough to hit it with your hand)
 
-Grip: Climb
+Grip: Climb, Use items / doors in proximity to hand
 
 Joystick: move 
 
@@ -148,8 +160,10 @@ Point weapon down: Reload (while holding grip)
 
 In main menu just select things by using the index finger of your hands
 
+You can press the grip button of your offhand controller to use or grab items as well as using the virtual pointer on your weapon hand (grabby hand)
+
 -----------
-Vehicle controls:
+Vehicle controls (reversed in Left Handed mode):
 
 Grab steering wheel and turn to turn 
 
@@ -175,19 +189,15 @@ I have been using it for testing the mod functions but I can't say for sure whet
 
 -You need to set the resolution in the in game menu to 1920 x 1080 or 1024 x 720 to ensure you can see the full menus
 
--Performance in some levels is very bad, particularly the large ones. Post beta release I will look into seeing if there is anything more I can do.
-	
-	For now you may want to try:
+-If you have bad performance you can try the following:
 	
 	(1)	Turning down your resolution some in your headset settings / virtual desktop settings (medium instead of high or ultra)
 	
-	(2)	Turning on ASW always on, Virtual Desktop SSW always on, SteamVR Reprojection always on
+	(2)	Turning on ASW always on (Oculus OpenXR Runtime), Virtual Desktop SSW always on (Steam OpenXR Runtime), SteamVR Reprojection always on
 	
 -Because of the same performance issues I have modified the game to deactivate NPCs that are a certain distance from you. This means the game does not quite play the same as the original and you can catch NPC's "sleeping on the job." But it also provides a 15-20 FPS boost in my testing.
 
 -You cannot wall jump in death mode
-
--You need to "distance grab" items and open doors with a virtual pointer like in the base game. I may work on this further post beta release.
 
 -Some random crashing. I don't think this is specifically related to VR.
 
