@@ -24,7 +24,7 @@ Make sure the game is installed in the same directory as your Windows Powershell
 
 ## Install the loader
 
-1. ~~Download the v0.15-VR-alpha release in THIS fork (teddybear082/new-install-script). Link here: https://github.com/teddybear082/crus-modloader/releases/tag/v.015-VR-alpha
+1. ~~Download the v0.16-VR-alpha release in THIS fork (teddybear082/new-install-script). Link here:https://github.com/teddybear082/crus-modloader/releases/tag/v.016-VR-alpha
 
 This early build currently uses a modification of crustyrashky and disco0's newer install script method. Unzip the release and copy the folder this README is in to your game folder, it should look something like this:
 ```
@@ -74,10 +74,10 @@ This early build currently uses a modification of crustyrashky and disco0's newe
 2. Go to Properties > Local Files
 3. Verify integrity of game files
 
-## Install other mods (probably this will not work right now, as the Crus mod base touches the same files as I do. Someday I am hoping to integrate it.
+## Install custom levels
 
-1. Drag/extract mod folder into `%appdata%\Godot\app_userdata\Cruelty Squad\mods`
-2. Launch the game
+1. Drag/extract/unzip level folder into `%appdata%\Godot\app_userdata\Cruelty Squad\levels .  You can find levels at: https://crus.cc/maps/newest/
+2. Launch the game.
 3. If it didn't work post to #modifications in the discord with the contents of `%appdata%\Godot\app_userdata\Cruelty Squad\logs\mods.log`
 
 ## Uninstall mods
