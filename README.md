@@ -1,14 +1,10 @@
 # CRUELTY SQUAD VR MOD LOADER
 
-**To load custom maps install the [CruS Mod Base](https://github.com/crustyrashky/crus-modbase) mod, NOT THIS ONE**
-
 **This is a fork of the excellent modloader developed by crustyrashky and disco0, which installs both disco's 0.2.2b version of the crus modloader as well as files required for a VR mod using the Godot OpenXR Asset and XR Tools asset.**
-
-**YOU SHOULD NOT USE THIS INSTALLER UNLESS YOU PLAN TO ALSO INSTALL A VR MOD FILE THAT HAS THE GODOT XR TOOLS ASSET BEFORE RUNNING THE GAME EXE **
 
 **YOU SHOULD NOT USE THIS INSTALLER IF YOU DON'T HAVE A VR HEADSET**
 
-Only use this game on an official purchased version of the game.
+Only use this mod on an official purchased version of the game.
 
 **This is also in an ALPHA (TESTING) STATE!!! Back up EVERYTHING Cruelty Squad associated before trying this version of the modloader.  Right now it is intended ONLY for VR modders not end-users.**
 
