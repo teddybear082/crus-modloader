@@ -24,7 +24,7 @@ Make sure the game is installed in the same directory as your Windows Powershell
 
 ## Install the loader
 
-1. ~~Download the v0.16-VR-alpha release in THIS fork (teddybear082/new-install-script). Link here:https://github.com/teddybear082/crus-modloader/releases/tag/v.016-VR-alpha
+1. ~~Download the v0.17-VR-alpha release in THIS fork (teddybear082/new-install-script). Link here: https://github.com/teddybear082/crus-modloader/releases/tag/v.017-VR-alpha
 
 This early build currently uses a modification of crustyrashky and disco0's newer install script method. Unzip the release and copy the folder this README is in to your game folder, it should look something like this:
 ```
@@ -76,8 +76,8 @@ This early build currently uses a modification of crustyrashky and disco0's newe
 
 ## Install custom levels
 
-1. Drag/extract/unzip level folder into `%appdata%\Godot\app_userdata\Cruelty Squad\levels .  You can find levels at: https://crus.cc/maps/newest/
-2. Launch the game.
+1. Drag/extract / unzip level folder into `%appdata%\Godot\app_userdata\Cruelty Squad\levels .  You can find levels at: https://crus.cc/maps/newest/`
+2. Launch the game
 3. If it didn't work post to #modifications in the discord with the contents of `%appdata%\Godot\app_userdata\Cruelty Squad\logs\mods.log`
 
 ## Uninstall mods
@@ -100,7 +100,7 @@ https://github.com/GodotVR/godot-xr-tools (uses December 29, 2022 build)
 
 Special thanks to:
 
-Brock and MrGlock from the Crus Discord for extensive testing 
+Testers: Brock, MrGlock, Cortik from the Crus Discord and Hoshi82 (Youtube/Twitter) for testing 
 
 DX from the Crus Discord for so much help and ideas even though DX does not have a VR headset
 
@@ -187,7 +187,7 @@ I have been using it for testing the mod functions but I can't say for sure whet
 
 -You have to jump up stairs
 
--You need to set the resolution in the in game menu to 1920 x 1080 or 1024 x 720 to ensure you can see the full menus
+-You need to set the resolution in the in game menu to 1024 x 720 to ensure you can see the full menus
 
 -If you have bad performance you can try the following:
 	
@@ -197,7 +197,7 @@ I have been using it for testing the mod functions but I can't say for sure whet
 	
 -Because of the same performance issues I have modified the game to deactivate NPCs that are a certain distance from you. This means the game does not quite play the same as the original and you can catch NPC's "sleeping on the job." But it also provides a 15-20 FPS boost in my testing.
 
--You cannot wall jump in death mode
+-Wall jump in death mode is experimental
 
 -Some random crashing. I don't think this is specifically related to VR.
 
